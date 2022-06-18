@@ -2,7 +2,7 @@ let array = [];
 
 const generateArray = () => {
 
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 200; i++) {
 
         let random = Math.floor(Math.random() * 100);
       
@@ -18,6 +18,6 @@ const bars = document.querySelector("#bars");
 
 array.forEach((value, index) => {
 
-  bars.innerHTML += `<div class="bar"></div>`;
+  bars.innerHTML += `<div class="bar" style=height:${value}></div>`;
 
 });
