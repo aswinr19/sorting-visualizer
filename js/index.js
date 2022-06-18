@@ -13,11 +13,16 @@ const generateArray = () => {
 
 generateArray();
 
+const newArray = document.querySelector(".generate");
+
+newArray.addEventListener("click",generateArray());
 
 const bars = document.querySelector("#bars");
 
 array.forEach((value, index) => {
 
-  bars.innerHTML += `<div class="bar" style=height:${value}></div>`;
+  bars.innerHTML += `<div class="bar" style=height:${value*5}px></div>`;
+
+
 
 });
