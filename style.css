@@ -1,0 +1,19 @@
+body {
+  padding: 0px;
+  margin: 0px;
+  background-color: #000000;
+}
+
+h2 {
+  padding: 20px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.btn {
+  padding: 10px;
+  margin: 10px;
+}
+.right {
+  float: right;
+}
