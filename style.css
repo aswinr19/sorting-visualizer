@@ -17,3 +17,15 @@ h2 {
 .right {
   float: right;
 }
+
+#bars{
+
+    padding:10px;
+}
+
+.bar{
+    background-color:yellow;
+    display:inline;
+    margin:5px;
+    padding:3px;
+}
