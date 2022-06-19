@@ -10,14 +10,22 @@
   <body>
     <h1>Sorting Visualizer</h1>
     <nav>
-      <button class="btn generate" >New Array</button>
+      <button class="btn" id="generate" onclick="generateArray()">
+        New Array
+      </button>
+      <input type="range" class="range" min="30" max="200" />
       <button class="btn right bubble">Bubble Sort</button>
       <button class="btn right selection">Selection Sort</button>
       <button class="btn right inserion">Insertion Sort</button>
       <button class="btn right merge">Merge Sort</button>
       <button class="btn right quick">Quick Sort</button>
     </nav>
+
     <div id="bars"></div>
   </body>
   <script src="./js/index.js"></script>
+  <script src="./js/selection.js"></script>
+  <script src="./js/insertion.js"></script>
+  <script src="./js/quick.js"></script>
+  <script src="./js/merge.js"></script>
 </html>
