@@ -4,16 +4,14 @@ const range = document.querySelector(".range");
 
 // console.log(range.value);
 
-
-const clearArray= (array) => {
+const clearArray = (array) => {
   while (array.length) {
     array.pop();
   }
-}
+};
 
 const generateArray = () => {
-
- 
+  
   clearArray(array);
 
   for (let i = 0; i < range.valueAsNumber; i++) {
@@ -24,14 +22,16 @@ const generateArray = () => {
   console.log(array);
   const bars = document.querySelector("#bars");
 
-  bars.innerHTML = '';
+  bars.innerHTML = "";
 
-  array.forEach((value, index) => {
+  array.forEach((value) => {
     bars.innerHTML += `<div class="bar" style=height:${value * 5}px></div>`;
   });
- 
-}
+};
 
- generateArray();
+generateArray();
 
 let newArray = document.querySelector("#generate");
+
+
+
