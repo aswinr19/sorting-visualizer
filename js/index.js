@@ -1,10 +1,30 @@
-let array = [];
-
-const range = document.querySelector(".range");
+//accessing neccessory dom elements
 
 const bar = document.querySelector("#bar");
 
+const range = document.querySelector("#range");
+
 const newArray = document.querySelector("#generate");
+
+const bubbleSort = document.querySelector("#bubble");
+
+const selectionSort = document.querySelector("#selection");
+
+const insertionSort = document.querySelector("#insertion");
+
+const mergeSort = document.querySelector("#merge");
+
+const quickSort = document.querySelector("#quick");
+
+//swap function for sorting algorithms
+
+const swap = (el1, el2) => {
+  const temp = el1.style.height;
+  el1.style.height = el2.style.height;
+  el2.style.height = temp;
+};
+
+//clear function to remove all elements from the array
 
 const clearArray = (array) => {
   while (array.length) {
@@ -12,45 +32,19 @@ const clearArray = (array) => {
   }
 };
 
-const generateRandomArray = (array, range) => {
-  if (array) clearArray(array);
+// generateArray function to generate new random array
+
+const generateNewArray = () => {
+  let array = [];
 
   for (let i = 0; i < range.valueAsNumber; i++) {
-    let random = Math.floor(Math.random() * 100);
-    array.push(random);
+    array.push(Math.floor(Math.random() * 100) + 1);
   }
 
-  console.log(array);
-  bar.innerHtml = "";
-
-  array.forEach((value) => {
-    bar.innerHTML += `<div class="bars" id="${value}"style=height:${
-      value * 5
-    }px></div>`;
-  });
+  return array;
 };
 
-generateRandomArray(array, range);
+const array = generateNewArray();
 
-const swap = (e1, e2) => {
-  let temp = e1.style.height;
-  e1.style.height = e2.style.height;
-  e2.style.height = temp;
-};
-
-const bubbleSort = (array) => {
-  let bars = document.querySelectorAll(".bars");
-  for (let i = 0; i < array.length - 1; i++) {
-    for (let j = 0; j < array.length - i - 1; j++) {
-      if (parseInt(bars[j].style.height) > parseInt(bars[j + 1].style.height)) {
-        // bars[j].style.background = "red";
-        // bars[j + 1].style.background = "red";
-
-        swap(bars[j] > bars[j + 1]);
-      }
-    }
-  }
-};
-
-
-bubbleSort(array);
+// console.log(range.valueAsNumber);
+console.log(array);
