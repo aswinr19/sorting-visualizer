@@ -18,11 +18,11 @@ const quickSort = document.querySelector("#quick");
 
 //swap function for sorting algorithms
 
-const swap = (el1, el2) => {
-  const temp = el1.style.height;
-  el1.style.height = el2.style.height;
-  el2.style.height = temp;
-};
+// const swap = (el1, el2) => {
+//   const temp = el1.style.height;
+//   el1.style.height = el2.style.height;
+//   el2.style.height = temp;
+// };
 
 //clear function to remove all elements from the array
 
@@ -44,7 +44,15 @@ const generateNewArray = () => {
   return array;
 };
 
-const array = generateNewArray();
+// const array = generateNewArray();
 
-// console.log(range.valueAsNumber);
-console.log(array);
+// // console.log(range.valueAsNumber);
+// console.log(array);
+
+
+// //generateBars function generates a new set of bars
+// const generateBars = (array) =>{
+
+
+
+// }
