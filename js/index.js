@@ -1,6 +1,6 @@
 //accessing neccessory dom elements
 
-const bar = document.querySelector("#bar");
+const bars = document.querySelector("#bars");
 
 const range = document.querySelector("#range");
 
@@ -16,43 +16,28 @@ const mergeSort = document.querySelector("#merge");
 
 const quickSort = document.querySelector("#quick");
 
-//swap function for sorting algorithms
-
-// const swap = (el1, el2) => {
-//   const temp = el1.style.height;
-//   el1.style.height = el2.style.height;
-//   el2.style.height = temp;
-// };
-
-//clear function to remove all elements from the array
-
-const clearArray = (array) => {
-  while (array.length) {
-    array.pop();
-  }
-};
+const numberOfBars = range.valueAsNumber;
 
 // generateArray function to generate new random array
 
-const generateNewArray = () => {
+const generateNewArray = (noOfBars = 60) => {
   let array = [];
 
-  for (let i = 0; i < range.valueAsNumber; i++) {
+  for (let i = 0; i < noOfBars; i++) {
     array.push(Math.floor(Math.random() * 100) + 1);
   }
 
-  return array;
+  console.log(array);
+
+  for (i = 0; i < noOfBars; i++) {
+    const bar = document.createElement("div");
+    bar.style.height = `${array[i * 2]}px`;
+    bar.classList.add("bar");
+    bar.classList.add(`barNo${i}`);
+    bars.appendChild(bar);
+  }
 };
 
-// const array = generateNewArray();
-
-// // console.log(range.valueAsNumber);
-// console.log(array);
-
-
-// //generateBars function generates a new set of bars
-// const generateBars = (array) =>{
-
-
-
-// }
+const deleteChild = () => {
+  bars.innerHTML = "";
+};
