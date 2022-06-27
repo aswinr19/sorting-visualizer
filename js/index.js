@@ -6,18 +6,14 @@ const range = document.querySelector("#range");
 
 const newArray = document.querySelector("#generate");
 
-const bubbleSort = document.querySelector("#bubble");
-
-const selectionSort = document.querySelector("#selection");
-
-const insertionSort = document.querySelector("#insertion");
-
-const mergeSort = document.querySelector("#merge");
-
-const quickSort = document.querySelector("#quick");
-
 const numberOfBars = range.valueAsNumber;
 
+
+const wait = ( millisec = 250 ) =>{
+  return new Promise( resolve =>{
+    setTimeout( () =>{ resolve('')},millisec);
+  });
+}
 //deleteChild function to delete old divs
 
 const deleteChild = () => {
@@ -26,20 +22,18 @@ const deleteChild = () => {
 
 // generateArray function to generate new random array
 
-const generateNewArray = (noOfBars = 60) => {
+const generateNewArray = (noOfBars ) => {
   let array = [];
 
   for (let i = 0; i < noOfBars; i++) {
     array.push(Math.floor(Math.random() * 100) + 1);
   }
 
-  console.log(array);
-
-
+ 
 
   for (let j = 0; j < noOfBars; j++) {
     const bar = document.createElement("div");
-    bar.style.height = `${array[j]*5}px`;
+    bar.style.height = `${array[j] * 5}px`;
     console.log(array[j]);
     bar.classList.add("bar");
     bar.classList.add(`barNo${j}`);
@@ -47,5 +41,16 @@ const generateNewArray = (noOfBars = 60) => {
   }
 };
 
+// generate random array when page first loads
 deleteChild();
-generateNewArray(100);
+
+
+generateNewArray("numberOfBars");
+
+console.log(numberOfBars);
+
+//generate random array when new array button is clicked
+newArray.addEventListener("click", function () {
+  deleteChild();
+  generateNewArray(numberOfBars);
+});
