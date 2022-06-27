@@ -18,6 +18,12 @@ const quickSort = document.querySelector("#quick");
 
 const numberOfBars = range.valueAsNumber;
 
+//deleteChild function to delete old divs
+
+const deleteChild = () => {
+  bars.innerHTML = "";
+};
+
 // generateArray function to generate new random array
 
 const generateNewArray = (noOfBars = 60) => {
@@ -29,15 +35,17 @@ const generateNewArray = (noOfBars = 60) => {
 
   console.log(array);
 
-  for (i = 0; i < noOfBars; i++) {
+
+
+  for (let j = 0; j < noOfBars; j++) {
     const bar = document.createElement("div");
-    bar.style.height = `${array[i * 2]}px`;
+    bar.style.height = `${array[j]*5}px`;
+    console.log(array[j]);
     bar.classList.add("bar");
-    bar.classList.add(`barNo${i}`);
+    bar.classList.add(`barNo${j}`);
     bars.appendChild(bar);
   }
 };
 
-const deleteChild = () => {
-  bars.innerHTML = "";
-};
+deleteChild();
+generateNewArray(100);
