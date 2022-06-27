@@ -8,12 +8,14 @@ const newArray = document.querySelector("#generate");
 
 const numberOfBars = range.valueAsNumber;
 
-
-const wait = ( millisec = 250 ) =>{
-  return new Promise( resolve =>{
-    setTimeout( () =>{ resolve('')},millisec);
+const wait = (millisec = 250) => {
+  console.log("inside wait");
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("");
+    }, millisec);
   });
-}
+};
 //deleteChild function to delete old divs
 
 const deleteChild = () => {
@@ -22,14 +24,12 @@ const deleteChild = () => {
 
 // generateArray function to generate new random array
 
-const generateNewArray = (noOfBars ) => {
+const generateNewArray = (noOfBars) => {
   let array = [];
 
   for (let i = 0; i < noOfBars; i++) {
     array.push(Math.floor(Math.random() * 100) + 1);
   }
-
- 
 
   for (let j = 0; j < noOfBars; j++) {
     const bar = document.createElement("div");
@@ -44,8 +44,7 @@ const generateNewArray = (noOfBars ) => {
 // generate random array when page first loads
 deleteChild();
 
-
-generateNewArray("numberOfBars");
+generateNewArray(numberOfBars);
 
 console.log(numberOfBars);
 
@@ -53,4 +52,8 @@ console.log(numberOfBars);
 newArray.addEventListener("click", function () {
   deleteChild();
   generateNewArray(numberOfBars);
+});
+
+range.addEventListener("change", function () {
+  window.location.reload();
 });
