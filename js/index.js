@@ -8,7 +8,7 @@ const newArray = document.querySelector("#generate");
 
 const numberOfBars = range.valueAsNumber;
 
-const wait = (millisec = 250) => {
+const waitFor = (millisec = 250) => {
   console.log("inside wait");
   return new Promise((resolve) => {
     setTimeout(() => {

@@ -1,4 +1,4 @@
-const bubbleSort = () => {
+ async function bubbleSort ()  {
   console.log("In bubble sort");
   const element = document.querySelectorAll(".bar");
 
@@ -10,7 +10,7 @@ const bubbleSort = () => {
         parseInt(element[j].style.height) >
         parseInt(element[j + 1].style.height)
       ) {
-        wait(250);
+        await waitFor(2);
         let temp = element[j].style.height;
         element[j].style.height = element[j + 1].style.height;
         element[j + 1].style.height = temp;
