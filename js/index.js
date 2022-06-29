@@ -4,11 +4,16 @@ const bars = document.querySelector("#bars");
 
 const range = document.querySelector("#range");
 
+const speed = document.querySelector("#speed");
+
 const newArray = document.querySelector("#generate");
 
-const numberOfBars = range.valueAsNumber;
+let numberOfBars = range.valueAsNumber;
 
-const waitFor = (millisec = 250) => {
+let millisec = 30;
+
+// waitFor function takes a delay as argument
+const waitFor = (millisec) => {
   console.log("inside wait");
   return new Promise((resolve) => {
     setTimeout(() => {
@@ -16,14 +21,20 @@ const waitFor = (millisec = 250) => {
     }, millisec);
   });
 };
-//deleteChild function to delete old divs
 
+//swap function takes two divs as argument and swaps their styles(height).
+const swap = (elm1, elm2) => {
+  let temp = elm1.style.height;
+  elm1.style.height = elm2.style.height;
+  elm2.style.height = temp;
+};
+
+//deleteChild function to delete old divs
 const deleteChild = () => {
   bars.innerHTML = "";
 };
 
 // generateArray function to generate new random array
-
 const generateNewArray = (noOfBars) => {
   let array = [];
 
@@ -43,10 +54,7 @@ const generateNewArray = (noOfBars) => {
 
 // generate random array when page first loads
 deleteChild();
-
 generateNewArray(numberOfBars);
-
-console.log(numberOfBars);
 
 //generate random array when new array button is clicked
 newArray.addEventListener("click", function () {
@@ -54,6 +62,13 @@ newArray.addEventListener("click", function () {
   generateNewArray(numberOfBars);
 });
 
-range.addEventListener("change", function () {
-  window.location.reload();
+range.addEventListener("input", function () {
+  deleteChild();
+  generateNewArray(numberOfBars);
+});
+
+speed.addEventListener("input", function () {
+  millisec = 30 - speed.valueAsNumber;
+  console.log("delay:", millisec);
+  console.log("delay:", speed.valueAsNumber);
 });

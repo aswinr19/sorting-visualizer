@@ -10,11 +10,12 @@
         parseInt(element[j].style.height) >
         parseInt(element[j + 1].style.height)
       ) {
-        await waitFor(2);
-        let temp = element[j].style.height;
-        element[j].style.height = element[j + 1].style.height;
-        element[j + 1].style.height = temp;
+        await waitFor(millisec);
+        swap(element[j],element[j+1]);
+       
       }
+      element[j].style.background = "yellow";
+      element[j + 1].style.background = "yellow";
     }
     element[element.length-1-i].style.background = "green";
 
