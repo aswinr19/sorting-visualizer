@@ -5,20 +5,22 @@ async function selectionSort() {
   let j;
   for (i = 0; i < element.length - 1; i++) {
     let min = i;
-    element[min].style.background = "blue";
-    for (j = i+1; j < element.length; j++) {
+    for (j = i + 1; j < element.length; j++) {
       element[min].style.background = "red";
       element[j].style.background = "red";
-      if (parseInt(element[j].style.height) < parseInt(element[min].style.height)) min = j;
+      if (
+        parseInt(element[j].style.height) < parseInt(element[min].style.height)
+      )
+        min = j;
       element[min].style.background = "yellow";
       element[j].style.background = "yellow";
     }
 
     await waitFor(millisec);
     swap(element[i], element[min]);
-     element[i].style.background = "green";
+    element[i].style.background = "green";
   }
-  element[element.length-1].style.background = "green";
+  element[element.length - 1].style.background = "green";
 }
 
 const selectionSortBtn = document.querySelector("#selection");

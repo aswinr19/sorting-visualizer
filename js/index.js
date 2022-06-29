@@ -17,7 +17,7 @@ let millisec = 30 - speed.valueAsNumber;
 //disableSortingBtns diables all  sorting buttons when a sorting is going on.
 const disableSortingBtns = () => {
   console.log("inside disableSortingBtns");
-  document.querySelector("#bubble").disable = true;
+  document.querySelector("#bubble").disabled = true;
   document.querySelector("#insertion").disabled = true;
   document.querySelector("#selection").disabled = true;
   document.querySelector("#quick").disabled = true;
