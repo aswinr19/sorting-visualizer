@@ -1,4 +1,4 @@
- async function bubbleSort ()  {
+async function bubbleSort() {
   console.log("In bubble sort");
   const element = document.querySelectorAll(".bar");
 
@@ -11,21 +11,23 @@
         parseInt(element[j + 1].style.height)
       ) {
         await waitFor(millisec);
-        swap(element[j],element[j+1]);
-       
+        swap(element[j], element[j + 1]);
       }
       element[j].style.background = "yellow";
       element[j + 1].style.background = "yellow";
     }
-    element[element.length-1-i].style.background = "green";
-
+    element[element.length - 1 - i].style.background = "green";
   }
   element[0].style.background = "green";
-};
+}
 
 const bubbleSortBtn = document.querySelector("#bubble");
 
 bubbleSortBtn.addEventListener("click", async function () {
+
   console.log("clicked");
+
+  disableSortingBtns();
   await bubbleSort();
+  enableSortingBtns();
 });
