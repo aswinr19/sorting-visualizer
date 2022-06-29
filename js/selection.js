@@ -5,6 +5,7 @@ async function selectionSort() {
   let j;
   for (i = 0; i < element.length - 1; i++) {
     let min = i;
+    element[min].style.background = "blue";
     for (j = i+1; j < element.length; j++) {
       element[min].style.background = "red";
       element[j].style.background = "red";
@@ -25,7 +26,11 @@ const selectionSortBtn = document.querySelector("#selection");
 selectionSortBtn.addEventListener("click", async function () {
   console.log("clicked");
 
+  disableNewArrayBtn();
+  disableSizeSlider();
   disableSortingBtns();
   await selectionSort();
+  enableNewArrayBtn();
+  enableSizeSlider();
   enableSortingBtns();
 });

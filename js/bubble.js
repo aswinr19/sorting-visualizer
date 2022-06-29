@@ -24,10 +24,13 @@ async function bubbleSort() {
 const bubbleSortBtn = document.querySelector("#bubble");
 
 bubbleSortBtn.addEventListener("click", async function () {
-
   console.log("clicked");
 
+  disableNewArrayBtn();
+  disableSizeSlider();
   disableSortingBtns();
   await bubbleSort();
+  enableNewArrayBtn();
+  enableSizeSlider();
   enableSortingBtns();
 });
