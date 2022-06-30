@@ -11,13 +11,19 @@ h1 {
   color: #ffffff;
 }
 
-
 .btn {
-  padding: 10px;
+  padding: 15px;
   margin: 25px;
+  font-size: 15px;
+  border-radius: 5px;
   background-color: #000000;
-  color: blue;
-  border: 1px solid blue;
+  color: #0000ff;
+  border: 1px solid #0000ff;
+}
+
+.btn:hover {
+  color: #000000;
+  background-color: #0000cf;
 }
 .right {
   float: right;
@@ -33,14 +39,11 @@ h1 {
   display: inline-block;
   margin: 2px;
   padding: 2px;
+  width: 2px;
+
 }
 
-.range {
-  
-  background-color: blue;
-  color: blue;
-}
-.label{
-  color:white;
+.label {
+  color: white;
   font-size: 18px;
 }

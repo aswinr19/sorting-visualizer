@@ -1,3 +1,5 @@
+
+//bubble sort logic.
 async function bubbleSort() {
   console.log("In bubble sort");
   const element = document.querySelectorAll(".bar");
@@ -21,8 +23,11 @@ async function bubbleSort() {
   element[0].style.background = "green";
 }
 
+
+//accessing the bubble sort button.
 const bubbleSortBtn = document.querySelector("#bubble");
 
+//adding the click event listener to bubble sort button , diabling other buttons and running bubble sort.
 bubbleSortBtn.addEventListener("click", async function () {
   console.log("clicked");
 
