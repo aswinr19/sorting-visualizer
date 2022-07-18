@@ -4,6 +4,10 @@ body {
   background-color: #000000;
 }
 
+.disabled{
+	opacity: 0.3;
+}
+
 h1 {
   padding: 20px;
   text-align: center;
