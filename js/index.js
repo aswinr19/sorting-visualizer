@@ -22,6 +22,12 @@ const disableSortingBtns = () => {
   document.querySelector("#selection").disabled = true;
   document.querySelector("#quick").disabled = true;
   document.querySelector("#merge").disabled = true;
+  
+  document.querySelector("#bubble").classList.add("disabled");
+  document.querySelector("#insertion").classList.add("disabled");
+  document.querySelector("#selection").classList.add("disabled");
+  document.querySelector("#quick").classList.add("disabled");
+  document.querySelector("#merge").classList.add("disabled");
 };
 
 //enableSortingBtns enables all sorting buttons when a sorting is going on.
@@ -32,6 +38,12 @@ const enableSortingBtns = () => {
   document.querySelector("#selection").disabled = false;
   document.querySelector("#quick").disabled = false;
   document.querySelector("#merge").disabled = false;
+  
+  document.querySelector("#bubble").classList.remove("disabled");
+  document.querySelector("#insertion").classList.remove("disabled");
+  document.querySelector("#selection").classList.remove("disabled");
+  document.querySelector("#quick").classList.remove("disabled");
+  document.querySelector("#merge").classList.remove("disabled");
 };
 
 //disableSizeSlider disables the number of bar slider when a sorting is going on.
@@ -47,11 +59,15 @@ const enableSizeSlider = () => {
 //disableSizeSlider disables the new array button when a sorting is going on.
 const disableNewArrayBtn = () => {
   document.querySelector("#generate").disabled = true;
+  
+  document.querySelector('#generate').classList.add("disabled");
 };
 
 //enableSizeSlider enables the new array button when a sorting is going on.
 const enableNewArrayBtn = () => {
   document.querySelector("#generate").disabled = false;
+  
+  document.querySelector("#generate").classList.remove("disabled");
 };
 
 // waitFor function takes a delay as argument.
