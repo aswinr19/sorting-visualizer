@@ -1,23 +1,41 @@
-async function merge(elm, l, m, h) {
-  const n1 = m - l + 1;
+async function merge(leftArr,rightArr){
+	const output = [];
+	let leftIndex = 0;
+	let rightIndex = 0;
 
-  const n2 = h - m;
+	while(leftIndex < leftArr.length && rightIndex < rightArr.length){
+		const lefftEl = leftArr[leftIndex];
+		const rightEl = rightArr[rightIndex];
 
-  const left = new Array(n1);
-  const right = new Array(n2);
-
+		if(leftEl < rightEl){
+			output.push(leftEl);
+			lefftIndex++;
+		}
+		else 
+		{
+			output.push(rightEl);
+			rightIndex++;
+		}
+	}
+	return [...output , ...leftArr.slice(lefftIndex) , ...rightArr.slice(rightIndex)];
 }
 
-async function mergeSort(element, low, high) {
-  if (low >= high) {
-    return;
-  } else {
-    const mid = low + Math.floor((high - low) / 2);
-    await mergeSort(element, low, mid);
-    await mergeSort(element, mid + 1, high);
-    await merge(element, low, mid, high);
-  }
+
+async function mergeSort(element){
+	if(element.length <= 1){
+		return ;
+	}
+	const middleIndex = Math.floor(array.length/2);
+	const leftArr = element.slice(0,middleIndex);
+	const rightArr = element.slice(middleIndex);
+	return merge(
+		mergeSort(leftArr);
+		mergeSort(rightArr);
+	);
 }
+
+
+
 
 const mergeSortBtn = document.querySelector("#merge");
 
