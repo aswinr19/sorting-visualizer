@@ -7,6 +7,7 @@ async function selectionSort() {
   for (i = 0; i < element.length - 1; i++) {
     let min = i;
     for (j = i + 1; j < element.length; j++) {
+     
       element[min].style.background = "red";
       if (
         parseInt(element[j].style.height) < parseInt(element[min].style.height)
@@ -18,6 +19,7 @@ async function selectionSort() {
     await waitFor(millisec);
     swap(element[i], element[min]);
     element[i].style.background = "green";
+    await waitFor(millisec);
     await waitFor(millisec);
   }
   element[element.length - 1].style.background = "green";

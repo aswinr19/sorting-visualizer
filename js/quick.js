@@ -2,45 +2,44 @@
 async function partitionLomuto(ele, l, r){
  
   let i = l - 1;
-  // color pivot element
+  
   ele[r].style.background = 'red';
   for(let j = l; j <= r - 1; j++){
     
-      // color current element
+     
       ele[j].style.background = 'yellow';
-      // pauseChamp
+   
       await waitFor(millisec);
 
       if(parseInt(ele[j].style.height) < parseInt(ele[r].style.height)){
          
           i++;
           swap(ele[i], ele[j]);
-          // color 
+          
           ele[i].style.background = 'orange';
           if(i != j) ele[j].style.background = 'orange';
-          // pauseChamp
+     
           await waitFor(millisec);
       }
       else{
-          // color if not less than pivot
+         
           ele[j].style.background = 'pink';
       }
   }
   i++; 
-  // pauseChamp
-  await waitFor(millisec);
-  swap(ele[i], ele[r]); // pivot height one
-  console.log(`i = ${i}`, typeof(i));
-  // color
-  ele[r].style.background = 'pink';
-  ele[i].style.background = 'green';
 
-  // pauseChamp
+  await waitFor(millisec);
+  swap(ele[i], ele[r]); 
+  console.log(`i = ${i}`, typeof(i));
+
+  ele[r].style.background = 'pink';
+  ele[i].style.background = 'lightgreen';
+
   await waitFor(millisec);
   
-  // color
+
   for(let k = 0; k < ele.length; k++){
-      if(ele[k].style.background != 'green')
+      if(ele[k].style.background != 'lightgreen')
           ele[k].style.background = 'cyan';
   }
 
@@ -56,12 +55,20 @@ async function quickSort(ele, l, r){
   }
   else{
       if(l >= 0 && r >= 0 && l <ele.length && r <ele.length){
-          ele[r].style.background = 'green';
-          ele[l].style.background = 'green';
+          ele[r].style.background = 'lightgreen';
+          ele[l].style.background = 'lightgreen';
       }
+     
   }
+  
 }
 
+async function colorElements(ele){
+  for(let k = 0; k < ele.length; k++){
+    
+        ele[k].style.background = 'green';
+}
+}
 
 const quickSortBtn = document.querySelector("#quick");
 
@@ -75,6 +82,7 @@ quickSortBtn.addEventListener("click", async function () {
   disableSizeSlider();
   disableSortingBtns();
   await quickSort(ele, l, r);
+  await colorElements(ele);
   enableNewArrayBtn();
   enableSizeSlider();
   enableSortingBtns();
