@@ -15,7 +15,8 @@ async function merge(ele,low,mid,high){
 		ele[mid+1+i].style.background = 'yellow';
 		right[i] = ele[mid+1+i].style.height;
 	}
-await waitFor(millisec);
+        await waitFor(millisec);
+		let i = 0, j = 0, k = low;
 	while(i<n1&& j<n2){
 		await waitFor(millisec);
 		
@@ -87,12 +88,12 @@ mergeSortbtn.addEventListener('click', async function(){
     let ele = document.querySelectorAll('.bar');
     let l = 0;
     let r = parseInt(ele.length) - 1;
-	disableNewArrayBtn();
-	disableSizeSlider();
-	disableSortingBtns();
+    disableNewArrayBtn();
+    disableSizeSlider();
+    disableSortingBtns();
     await mergeSort(ele, l, r);
-	enableNewArrayBtn();
-	enableSizeSlider();
-	enableSortingBtns();
+    enableNewArrayBtn();
+    enableSizeSlider();
+    enableSortingBtns();
 });
 
