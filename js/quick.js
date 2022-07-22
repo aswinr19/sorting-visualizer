@@ -9,7 +9,7 @@ async function partitionLomuto(ele, l, r){
       // color current element
       ele[j].style.background = 'yellow';
       // pauseChamp
-      await waitFor(delay);
+      await waitFor(millisec);
 
       if(parseInt(ele[j].style.height) < parseInt(ele[r].style.height)){
          
@@ -19,7 +19,7 @@ async function partitionLomuto(ele, l, r){
           ele[i].style.background = 'orange';
           if(i != j) ele[j].style.background = 'orange';
           // pauseChamp
-          await waitFor(delay);
+          await waitFor(millisec);
       }
       else{
           // color if not less than pivot
@@ -28,7 +28,7 @@ async function partitionLomuto(ele, l, r){
   }
   i++; 
   // pauseChamp
-  await waitFor(delay);
+  await waitFor(millisec);
   swap(ele[i], ele[r]); // pivot height one
   console.log(`i = ${i}`, typeof(i));
   // color
@@ -36,7 +36,7 @@ async function partitionLomuto(ele, l, r){
   ele[i].style.background = 'green';
 
   // pauseChamp
-  await waitFor(delay);
+  await waitFor(millisec);
   
   // color
   for(let k = 0; k < ele.length; k++){
